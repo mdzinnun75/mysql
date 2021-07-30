@@ -1,6 +1,6 @@
 --  Integrity Constraint CHECK KEY
 -- 
-use hr;
+use mydb;
 
 create table location(
 city varchar(15) check(city in('CHITTAGONG','DHAKA', 'RAJSHAHI', 'KHULNA')),
@@ -11,3 +11,5 @@ city varchar(15) check(city in('CHITTAGONG','DHAKA', 'RAJSHAHI', 'KHULNA')),
 insert into location values("chittagong", "Bangladesh", 088);	# succeed
 insert into location values("dhaka", "Bangladesh", 088);	# succeed
 insert into location values("rangpur", "Bangladesh", 088);	# failed 
+
+select * from location;
